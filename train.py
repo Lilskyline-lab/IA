@@ -57,7 +57,7 @@ CONFIG = {
     'num_heads': 8,       # Nombre de têtes d'attention
     'num_layers': 4,      # Nombre de blocs Transformer (12 pour ~100M)
     'max_seq_len': 1024,    # Longueur de séquence
-    'batch_size': 16 if device == 'cuda' else 2,  # GPU: 8, CPU: 2
+    'batch_size': 8 if device == 'cuda' else 2,  # GPU: 8, CPU: 2
     'num_epochs': 1 if device == 'cuda' else 1,  # Plus d'epochs sur GPU
     'learning_rate': 3e-4,
     'dropout': 0.1,
@@ -394,4 +394,5 @@ print("\n📁 Fichiers générés:")
 print(f"   → Checkpoints: {CONFIG['num_epochs']} fichiers dans ./checkpoints/")
 print(f"   → Modèle final: {final_path}")
 print("="*60)
+
 
